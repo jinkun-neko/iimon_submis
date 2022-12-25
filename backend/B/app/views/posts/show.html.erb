@@ -1,0 +1,17 @@
+<%
+=begin%>
+ <p style="color: green"><%= notice %></p> 
+<%
+=end%>
+
+<%= render @post %>
+
+<div>
+  <%= link_to "戻る", posts_path %> 
+  <% if user_signed_in? %>
+    <%= link_to "編集", edit_post_path(@post) %> |
+    <%= button_to "削除", @post,
+                    method: :delete,
+                    data: { confirm: "本当に削除しますか?" } %>
+  <% end %>
+</div>

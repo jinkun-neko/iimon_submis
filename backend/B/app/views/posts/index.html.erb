@@ -1,0 +1,18 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>投稿一覧</h1>
+
+<div id="posts" style="margin-bottom: 15px;">
+  <% @posts.each do |post| %>
+    <div class="content" style="border-bottom: 1px solid black;max-width: 500px;">
+      <p>
+        <strong>タイトル:</strong>
+        <%= link_to post do %><%= post.title %><% end %>
+      </p>
+      <p>
+        <strong>コンテンツ:</strong>
+        <%= post.content %>
+      </p>
+    </div>
+  <% end %>
+</div>
